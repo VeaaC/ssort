@@ -77,7 +77,7 @@ fn classify<T: Ord>(
     tree: &[T],
     mut output: impl FnMut(usize, BucketIndex),
 ) {
-    const CHUNK_SIZE: usize = 160;
+    const CHUNK_SIZE: usize = 16;
     let num_buckets = 1 << depth;
 
     // First process unrolled chunks (hopefully using super-scalar parallelism)
